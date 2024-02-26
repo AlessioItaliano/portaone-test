@@ -12,8 +12,8 @@ const EnterPage = () => {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      const content = event.target.result;
-      setNewNumbersList(content);
+      const numbers = event.target.result;
+      setNewNumbersList(numbers);
     };
     reader.onerror = (event) => {
       console.error("Помилка читання файлу:", event.target.error);
@@ -29,7 +29,6 @@ const EnterPage = () => {
   return (
     <s.Container>
       <>
-        {" "}
         <form onSubmit={handleSubmit}>
           <label htmlFor="fileInput">Виберіть файл:</label>
           <input type="file" id="fileInput" />
@@ -40,7 +39,14 @@ const EnterPage = () => {
         </form>
       </>
 
-      {newNumbersList && <ResponseLines newNumbersList={newNumbersList} />}
+      {!newNumbersList ? (
+        <>
+          <p>Please upload a file with numbers in .txt format.</p>
+          <p>After the calculations, your result will be here.</p>
+        </>
+      ) : (
+        <ResponseLines newNumbersList={newNumbersList} />
+      )}
     </s.Container>
   );
 };

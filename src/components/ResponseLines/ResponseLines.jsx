@@ -9,8 +9,6 @@ const ResponseLines = ({ newNumbersList }) => {
 
   const numbers = newNumbersList.trim().split("\n").map(Number);
 
-  console.log(numbers);
-
   let maxNumber = numbers[0];
 
   for (let i = 1; i < numbers.length; i++) {
@@ -33,13 +31,49 @@ const ResponseLines = ({ newNumbersList }) => {
     return parts.join(".");
   };
 
+  const averageNumber = (numbers) => {
+    const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+    const result = sum / numbers.length;
+
+    return result;
+  };
+
+  const median = (numbers) => {
+    numbers.sort((a, b) => a - b);
+
+    const middle = Math.floor(numbers.length / 2);
+
+    if (numbers.length % 2 === 0) {
+      return (numbers[middle - 1] + numbers[middle]) / 2;
+    } else {
+      return numbers[middle];
+    }
+  };
+
   return (
-    <s.Container>
-      <p>1. The maximum number is : {addDots(maxNumber)}</p>
-      <p>2. The minimum number is: {addDots(minNumber)}</p>
-      {/* <p>3. The median : {median}</p> */}
-      {/* <p>4. Average arithmetic value : {averageNumber}</p> */}
-    </s.Container>
+    <s.List>
+      <s.Item>
+        <s.Span>The maximum number is :</s.Span>
+        {addDots(maxNumber)}
+        <s.Description>Result without dots: {maxNumber}</s.Description>
+      </s.Item>
+      <s.Item>
+        <s.Span>The minimum number is:</s.Span>
+        {addDots(minNumber)}
+        <s.Description>Result without dots: {minNumber}</s.Description>
+      </s.Item>
+      <s.Item>
+        <s.Span> The median :</s.Span> {median(numbers)}
+      </s.Item>
+      <s.Item>
+        <s.Span>Average arithmetic value :</s.Span>
+        {averageNumber(numbers).toFixed(2)}
+        <s.Description>
+          Number rounded to 2 decimal places, result without truncation:{" "}
+          {averageNumber(numbers)}
+        </s.Description>
+      </s.Item>
+    </s.List>
   );
 };
 
