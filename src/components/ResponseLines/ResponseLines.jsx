@@ -11,6 +11,11 @@ const ResponseLines = ({ newNumbersList }) => {
 
   console.log("Масив чисел:", numbers);
 
+  setMaxNumber(1);
+  setMinNumber(1);
+  setMedian(1);
+  setAverageNumber(1);
+
   return (
     <s.Container>
       <p>1. The maximum number in the file : {maxNumber}</p>
