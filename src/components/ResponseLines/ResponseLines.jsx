@@ -1,61 +1,30 @@
+import { maxNumber } from "helpers/maxNumber";
+import { minNumber } from "helpers/minNumber";
+import { addDots } from "helpers/addDots";
+import { median } from "helpers/median";
+import { averageNumber } from "helpers/averageNumber";
+
 import * as s from "./ResponseLines.styled";
 
 const ResponseLines = ({ newNumbersList }) => {
   const numbers = newNumbersList.trim().split("\n").map(Number);
-
-  let maxNumber = numbers[0];
-
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > maxNumber) {
-      maxNumber = numbers[i];
-    }
-  }
-
-  let minNumber = numbers[0];
-
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] < minNumber) {
-      minNumber = numbers[i];
-    }
-  }
-
-  const addDots = (number) => {
-    const parts = number.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return parts.join(".");
-  };
-
-  const averageNumber = (numbers) => {
-    const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-    const result = sum / numbers.length;
-
-    return result;
-  };
-
-  const median = (numbers) => {
-    numbers.sort((a, b) => a - b);
-
-    const middle = Math.floor(numbers.length / 2);
-
-    if (numbers.length % 2 === 0) {
-      return (numbers[middle - 1] + numbers[middle]) / 2;
-    } else {
-      return numbers[middle];
-    }
-  };
 
   return (
     <s.Container>
       <s.List>
         <s.Item>
           <s.Span>The maximum number is :</s.Span>
-          {addDots(maxNumber)}
-          <s.Description>Result without dots: {maxNumber}</s.Description>
+          {addDots(maxNumber(numbers))}
+          <s.Description>
+            Result without dots: {maxNumber(numbers)}
+          </s.Description>
         </s.Item>
         <s.Item>
           <s.Span>The minimum number is:</s.Span>
-          {addDots(minNumber)}
-          <s.Description>Result without dots: {minNumber}</s.Description>
+          {addDots(minNumber(numbers))}
+          <s.Description>
+            Result without dots: {minNumber(numbers)}
+          </s.Description>
         </s.Item>
         <s.Item>
           <s.Span> The median :</s.Span> {median(numbers)}
