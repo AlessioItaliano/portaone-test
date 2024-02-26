@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/portaone-test/static/css/main.d07202e3.css",
-    "main.js": "/portaone-test/static/js/main.25cb9169.js",
+    "main.css": "/portaone-test/static/css/main.12dc8c90.css",
+    "main.js": "/portaone-test/static/js/main.3007dec4.js",
     "index.html": "/portaone-test/index.html",
-    "main.d07202e3.css.map": "/portaone-test/static/css/main.d07202e3.css.map",
-    "main.25cb9169.js.map": "/portaone-test/static/js/main.25cb9169.js.map"
+    "main.12dc8c90.css.map": "/portaone-test/static/css/main.12dc8c90.css.map",
+    "main.3007dec4.js.map": "/portaone-test/static/js/main.3007dec4.js.map"
   },
   "entrypoints": [
-    "static/css/main.d07202e3.css",
-    "static/js/main.25cb9169.js"
+    "static/css/main.12dc8c90.css",
+    "static/js/main.3007dec4.js"
   ]
 }
