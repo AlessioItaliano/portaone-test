@@ -1,12 +1,6 @@
-// import { useState } from "react";
 import * as s from "./ResponseLines.styled";
 
 const ResponseLines = ({ newNumbersList }) => {
-  //   const [maxNumber, setMaxNumber] = useState("");
-  //   const [minNumber, setMinNumber] = useState("");
-  //   const [median, setMedian] = useState("");
-  //   const [averageNumber, setAverageNumber] = useState("");
-
   const numbers = newNumbersList.trim().split("\n").map(Number);
 
   let maxNumber = numbers[0];
@@ -51,29 +45,31 @@ const ResponseLines = ({ newNumbersList }) => {
   };
 
   return (
-    <s.List>
-      <s.Item>
-        <s.Span>The maximum number is :</s.Span>
-        {addDots(maxNumber)}
-        <s.Description>Result without dots: {maxNumber}</s.Description>
-      </s.Item>
-      <s.Item>
-        <s.Span>The minimum number is:</s.Span>
-        {addDots(minNumber)}
-        <s.Description>Result without dots: {minNumber}</s.Description>
-      </s.Item>
-      <s.Item>
-        <s.Span> The median :</s.Span> {median(numbers)}
-      </s.Item>
-      <s.Item>
-        <s.Span>Average arithmetic value :</s.Span>
-        {averageNumber(numbers).toFixed(2)}
-        <s.Description>
-          Number rounded to 2 decimal places, result without truncation:{" "}
-          {averageNumber(numbers)}
-        </s.Description>
-      </s.Item>
-    </s.List>
+    <s.Container>
+      <s.List>
+        <s.Item>
+          <s.Span>The maximum number is :</s.Span>
+          {addDots(maxNumber)}
+          <s.Description>Result without dots: {maxNumber}</s.Description>
+        </s.Item>
+        <s.Item>
+          <s.Span>The minimum number is:</s.Span>
+          {addDots(minNumber)}
+          <s.Description>Result without dots: {minNumber}</s.Description>
+        </s.Item>
+        <s.Item>
+          <s.Span> The median :</s.Span> {median(numbers)}
+        </s.Item>
+        <s.Item>
+          <s.Span>Average arithmetic value :</s.Span>
+          {averageNumber(numbers).toFixed(2)}
+          <s.Description>
+            Number rounded to 2 decimal places, result without truncation:{" "}
+            {averageNumber(numbers)}
+          </s.Description>
+        </s.Item>
+      </s.List>
+    </s.Container>
   );
 };
 

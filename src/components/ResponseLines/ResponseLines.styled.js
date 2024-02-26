@@ -1,7 +1,25 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 420px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 4px #123f4c26;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 10px 20px;
+`;
+
 export const List = styled.ol`
-  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 30px;
 `;
 
 export const Item = styled.li`
