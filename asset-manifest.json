@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/portaone-test/static/css/main.e6c13ad2.css",
+    "main.js": "/portaone-test/static/js/main.503d2984.js",
+    "index.html": "/portaone-test/index.html",
+    "main.e6c13ad2.css.map": "/portaone-test/static/css/main.e6c13ad2.css.map",
+    "main.503d2984.js.map": "/portaone-test/static/js/main.503d2984.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.503d2984.js"
+  ]
+}
