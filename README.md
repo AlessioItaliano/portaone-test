@@ -1,4 +1,4 @@
-# NEWS WEBSITE
+# VALUE SEARCH WEBSITE
 
 Gretings and welcome on my website!
 
