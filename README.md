@@ -19,7 +19,7 @@ In the response, you will receive the following values:
 # How to Run the Project
 
 Simply type in the
-[link](https://github.com/AlessioItaliano/portaone-test/), and let the
+[link](https://alessioitaliano.github.io/portaone-test/), and let the
 magic unfold.
 
 # Used technologies
