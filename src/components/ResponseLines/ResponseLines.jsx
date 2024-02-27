@@ -3,11 +3,14 @@ import { minNumber } from "helpers/minNumber";
 import { addDots } from "helpers/addDots";
 import { median } from "helpers/median";
 import { averageNumber } from "helpers/averageNumber";
+import { findSequences } from "helpers/sequences";
 
 import * as s from "./ResponseLines.styled";
 
 const ResponseLines = ({ newNumbersList }) => {
   const numbers = newNumbersList.trim().split("\n").map(Number);
+
+  const { maxDecreasing, maxIncreasing } = findSequences(numbers);
 
   return (
     <s.Container>
@@ -36,6 +39,13 @@ const ResponseLines = ({ newNumbersList }) => {
             Number rounded to 2 decimal places, result without truncation:{" "}
             {averageNumber(numbers)}
           </s.Description>
+        </s.Item>
+        <s.Item>
+          <s.Span> Max Increasing Sequence :</s.Span>
+          {maxIncreasing.join(", ")}
+        </s.Item>
+        <s.Item>
+          <s.Span> Max Decreasing Sequence:</s.Span> {maxDecreasing.join(", ")}
         </s.Item>
       </s.List>
     </s.Container>
